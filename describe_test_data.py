@@ -41,7 +41,7 @@ LICENSE
 
 VERSION
 
-    1
+    1.0
 """
 
 import pandas as pd
