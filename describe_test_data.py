@@ -22,6 +22,7 @@ EXIT STATUS
 AUTHOR
 
     Theofilis George <theofilis.g@gmail.com>
+    Skianis Konstantinos <rob.cs.aueb@gmail.com>
 
 LICENSE
 
