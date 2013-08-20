@@ -2,6 +2,9 @@
 
 All utilities program we use for flight quest competition.
 
+1. [describe_test_data.py](https://github.com/theofilis/FlightQuest/blob/master/describe_test_data.py) This script produce a statistical report of test data.
+
+
 ## Requirements
 1. [pandas](pandas.pydata.org) pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 
