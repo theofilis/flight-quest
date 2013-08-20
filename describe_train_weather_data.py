@@ -8,7 +8,6 @@ SYNOPSIS
 DESCRIPTION
     
 
-
 EXAMPLES
     
     python csv_io.py
@@ -55,24 +54,19 @@ def read_folder(storefilename, dir):
     files = [f for f in os.listdir('./' + dir) if os.path.isfile( os.path.join(dir, f) )]
 
     for f in files:
-        id = f.replace(".csv", "")
+        with pd.get_store(storefilename) as store:
+            id = f.replace(".csv", "")
 
-        filename = os.path.join(dir, f)
-        print 'Append file:', id
-        for df in pd.read_csv(filename, chunksize=50000):
-            print df
-
-def read_file(filename):
-    for df in pd.read_csv(filename, index_col='id',keep_default_na=False, na_values=[""], chunksize=50000):
-        for ds in df:
-            factor = pd.cut(df[ds], 10)
-            print pd.value_counts(factor)
-            break
-        break
+            filename = os.path.join(dir, f)
+            print 'Append file:', id
+            
 
 def main():
 
-    read_file('weather/metarreports.csv')
+    read_folder('store.h5', 'weather')
 
+    print store
+
+    store.close()
 if __name__ == '__main__':
     main()
